@@ -31,7 +31,13 @@
     }
   ];
 
-/* Declare an empty array named cart to hold the items in the cart */
+// Empty array to hold products added to cart
+const cart = [];
+
+// Function that takes products array and productId as arguments and returns product
+function getProductById(productList, productId) {
+  return productList.find(product => product.productId === productId);
+}
 
 /* Create a function named addProductToCart that takes in the product productId as an argument
   - addProductToCart should get the correct product based on the productId
