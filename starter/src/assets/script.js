@@ -1,19 +1,35 @@
-/* Create an array named products which you will use to add all of your product object literals that you create in the next step. */
-
-/* Create 3 or more product objects using object literal notation 
-   Each product should include five properties
+/* Array containing the products available for sale
+   Each product is an object with these properties
    - name: name of product (string)
    - price: price of product (number)
-   - quantity: quantity in cart should start at zero (number)
-   - productId: unique id for the product (number)
-   - image: picture of product (url string)
-*/
-
-/* Images provided in /images folder. All images from Unsplash.com
-   - cherry.jpg by Mae Mu
-   - orange.jpg by Mae Mu
-   - strawberry.jpg by Allec Gomes
-*/
+   - quantity: quantity in cart, starts at 0 (number)
+   - productId: unique id (number)
+   - image: picture of product (url string) */
+   const products = [
+    {
+    name: 'Carton of Cherries',
+    price: 4,
+    quantity: 0,
+    productId: 101,
+    image: './images/cherry.jpg'
+    },
+  
+    {
+    name: 'Carton of Strawberries',
+    price: 5,
+    quantity: 0,
+    productId: 102,
+    image: './images/strawberry.jpg'
+    },
+  
+    {
+    name: 'Bag of Oranges',
+    price: 10,
+    quantity: 0,
+    productId: 103,
+    image: './images/orange.jpg'
+    }
+  ];
 
 /* Declare an empty array named cart to hold the items in the cart */
 
