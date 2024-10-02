@@ -85,21 +85,27 @@ function emptyCart() {
   cart.length = 0;
 }
 
-/* Create a function named cartTotal that has no parameters
-  - cartTotal should iterate through the cart to get the total cost of all products
-  - cartTotal should return the total cost of the products in the cart
-  Hint: price and quantity can be used to determine total cost
-*/
+// Function that returns the total cost of all products in the cart
+function cartTotal() {
+  return cart.reduce((totalCost, cartItem) => totalCost + (cartItem.quantity * cartItem.price), 0);
+}
 
-/* Create a function named pay that takes in an amount as an argument
-  - amount is the money paid by customer
-  - pay will return a negative number if there is a remaining balance
-  - pay will return a positive number if money should be returned to customer
-  Hint: cartTotal function gives us cost of all the products in the cart  
-*/
+// Set variable for total amount paid by customer
+let totalPaid = 0;
 
-/* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
-
+// Function that takes an amount paid by the customer and adds it to totalPaid
+// Then subtracts totalPaid from cartTotal and returns the difference
+function pay(amount) {
+  totalPaid += amount;
+  let remainingBalance = totalPaid - cartTotal();
+  // Checks if remaining balance is greater than or equal to 0
+  // If true, reset totalPaid to 0 and empty cart
+  if (remainingBalance >= 0) {
+    totalPaid = 0;
+    emptyCart();
+  }
+  return remainingBalance;
+}
 
 /* The following is for running unit tests. 
    To fully complete this project, it is expected that all tests pass.
