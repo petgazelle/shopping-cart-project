@@ -79,13 +79,17 @@ function decreaseQuantity(productId) {
   }
 }
 
+// Function that empties all products from the cart
+function emptyCart() {
+  cart.forEach(cartItem => setItemQuantityToZero(cartItem.productId));
+  cart.length = 0;
+}
+
 /* Create a function named cartTotal that has no parameters
   - cartTotal should iterate through the cart to get the total cost of all products
   - cartTotal should return the total cost of the products in the cart
   Hint: price and quantity can be used to determine total cost
 */
-
-/* Create a function called emptyCart that empties the products from the cart */
 
 /* Create a function named pay that takes in an amount as an argument
   - amount is the money paid by customer
